@@ -1,6 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -26,7 +32,7 @@ header p{
 }
 
 .conteneur{
-    width: 1440px;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +41,7 @@ header p{
 .main{
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
 }
 
 .kina{
@@ -46,11 +52,8 @@ header p{
     border-radius: 12px;
     margin: 10px;
     padding: 10px;
-    overflow: hidden;/* pour cacher les débordements */
+    overflow: hidden;   /* pour cacher les débordements */
     box-shadow: 1px  4px 10px 10px rgba(0, 0, 0, 0.2);
-}
-.kina:hover{
-    box-shadow: 1px  4px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .kina::before {
@@ -72,11 +75,10 @@ header p{
   height: 100%;
   background: #ff6b6b;
 }
-
-.kina::before,
-.kina::after {
-  border-radius: 20px 0 0 0; /* arrondi coin haut-gauche */
+.kina:hover{
+    box-shadow: 1px  4px 10px 10px rgba(0, 0, 0, 0.3);
 }
+
 .brah{
     width: 28%;
     height: 250px;
@@ -110,10 +112,6 @@ header p{
   height: 100%;
   background: #4ecdc4;
 }
-.brah::before,
-.brah::after {
-  border-radius: 10px 10px 0 0;
-} 
 
 .Djingarey{
     width: 28%;
@@ -148,10 +146,6 @@ header p{
   height: 100%;
   background: #45b7d1;
 }
-.Djingarey::before,
-.Djingarey::after {
-  border-radius: 10px 10px 0 0;
-} 
 
 .yac{
     width: 28%;
@@ -187,10 +181,6 @@ header p{
   height: 100%;
   background: #f9ca24;
 }
-.yac::before,
-.yac::after {
-  border-radius: 10px 10px 0 0;
-} 
 .avis{
     margin: 20px;
 }
@@ -234,11 +224,6 @@ header p{
   background: #a55eea;
 }
 
-.mariam::before,
-.mariam::after {
-  border-radius: 20px 0 0 0; 
-}
-
 .haoua{
     width: 28%;
     height: 250px;
@@ -273,14 +258,10 @@ header p{
   height: 100%;
   background: #26de81;
 }
-.haoua::before,
-.haoua::after {
-  border-radius: 10px 10px 0 0;
-} 
 
 .yacouba{
     width: 28%;
-    height: 100px;
+    height: 160px;
     position: relative;
     background: #FFFFFF;
     border-radius: 12px;
@@ -312,11 +293,6 @@ header p{
   width: 5px; 
   height: 100%;
   background: #f9ca24;
-}
-
-.yacouba::before,
-.yacouba::after {
-  border-radius: 20px 0 0 0; 
 }
 
 .section1{
@@ -385,6 +361,12 @@ i{
         margin: 0;
         margin: 20px;
     }
+    .yac{
+        width: 310px;
+    }
+    .yac .etoiles{
+        padding-right: 0;
+    }
 
 }
 
@@ -392,32 +374,66 @@ i{
 
 @media (max-width:768px) {
     .section1{
-        width: 99%;
+       width: 97%;
         display: flex;
         flex-direction: column;
     }
     .section2{
-        width: 99%;
+       width: 97%;
         display: flex;
         flex-direction: column;
+    }
+    .conteneur{
+        width: 97%;
+    }
+    .main{
+        width: 97%;
     }
 
-    .yacouba, .kina, .brah, .yac, .mariam, .haoua, .Djingarey{
-        width: 95%;
+    .kina, .brah, .yac, .mariam, .haoua, .Djingarey{
+        width: 97%;
         display: flex;
         flex-direction: column;
     }
+    .yacouba{
+        width: 94%;
+    }
+
 }
 
 @media (max-width:375px) {
 
-    .kina, .brah, .yacouba, .yac, .mariam, .Djingarey, .haoua{
+    .kina, .brah, .yac, .mariam, .Djingarey, .haoua{
         width: 90%;
+        height: 300px;
     }
-    .avis{
-        margin: 0;
-        margin-top: 10px;
+    .avis {
+        font-size: 1.1rem;
     }
+    .dev{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .dev1{
+        flex-direction: column;
+         align-items: center;
+    }
+
+    .kina1{
+        align-items: center;
+    }
+    .etoiles{
+        padding-right: 0;
+        justify-content: center;
+    }
+    .yac .avis{
+        margin: 10px;
+    }
+    .yacouba{
+        width: 92%;
+    height: 200px;
+    }
+    
 }
 @media (max-width:425px) {
     .conteneur, .section1, .section2{
@@ -425,13 +441,35 @@ i{
         align-items: center;
     }
 
-    .kina, .brah, .yacouba, .yac, .mariam, .Djingarey, .haoua{
+    .kina, .brah, .yac, .mariam, .Djingarey, .haoua{
         width: 90%;
+        height: 300px;
     }
     .avis{
         margin: 0;
         margin-top: 10px;
     }
+    .dev{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .dev1{
+        flex-direction: column;
+         align-items: center;
+    }
+
+    .kina1{
+        align-items: center;
+    }
+    .etoiles{
+        padding-right: 0;
+        justify-content: center;
+    }
+    .yacouba{
+        width: 92%;
+    height: 200px;
+    }
+    
 }
 
 @media (max-width:320px) {
@@ -443,5 +481,29 @@ i{
     .avis{
         margin-left: 10px;
     }
+    .dev{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .dev1{
+        flex-direction: column;
+         align-items: center;
+    }
+
+    .kina1{
+        align-items: center;
+    }
+    .etoiles{
+        padding-right: 0;
+        justify-content: center;
+    }
+    .kina, .brah, .yac, .mariam, .Djingarey, .haoua{
+        height: 350px;
+    }
+    .yacouba{
+        width: 92%;
+    height: 200px;
+    }
+
 
 }
